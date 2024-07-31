@@ -24,6 +24,7 @@
     {nodeTypes}
     fitView
     proOptions={{ hideAttribution: true }}
+    colorMode="system"
   >
     <Controls />
     <Background variant={BackgroundVariant.Dots} />
