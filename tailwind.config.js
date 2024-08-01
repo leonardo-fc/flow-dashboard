@@ -3,7 +3,12 @@ export default {
   content: ["./index.html", "./src/**/*.svelte"],
   darkMode: ["class"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        success: "#55dd99",
+        error: "#ff6060",
+      },
+    },
   },
   plugins: [],
 };

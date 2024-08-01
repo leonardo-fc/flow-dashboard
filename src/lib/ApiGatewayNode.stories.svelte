@@ -1,22 +1,18 @@
 <script context="module" lang="ts">
   import type { Meta } from "@storybook/svelte";
-  import IconNode from "./IconNode.svelte";
-  import AWSIcon from "@/assets/AWS/AWS-Cloud-logo_32.svg";
+  import ApiGatewayNode from "./ApiGatewayNode.svelte";
 
   export const meta = {
-    title: "Node/IconNode",
-    component: IconNode,
+    title: "Node/ApiGatewayNode",
+    component: ApiGatewayNode,
     tags: ["autodocs"],
     args: {
-      data: {
-        label: "Long Amazon Web Service Name",
-        icon: AWSIcon,
-      },
+      data: {},
     },
     parameters: {
       layout: "fullscreen",
     },
-  } satisfies Meta<IconNode>;
+  } satisfies Meta<ApiGatewayNode>;
 </script>
 
 <script lang="ts">
@@ -25,7 +21,7 @@
 </script>
 
 <Template let:args>
-  <StoryFlowLayout NodeComponent={IconNode} nodeProps={args} />
+  <StoryFlowLayout NodeComponent={ApiGatewayNode} nodeProps={args} />
 </Template>
 
 <Story name="Default" />
