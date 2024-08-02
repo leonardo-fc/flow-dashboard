@@ -4,7 +4,7 @@
   export let data: {};
   $$restProps;
 
-  const {} = data;
+  $: ({} = data);
 </script>
 
 <div>

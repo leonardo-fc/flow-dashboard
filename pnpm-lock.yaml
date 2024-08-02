@@ -66,6 +66,9 @@ importers:
       storybook:
         specifier: ^8.2.6
         version: 8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2))
+      storybook-addon-deep-controls:
+        specifier: ^0.6.2
+        version: 0.6.2(@storybook/addon-controls@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2))))(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2)))
       svelte:
         specifier: ^4.2.18
         version: 4.2.18
@@ -3968,6 +3971,12 @@ packages:
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
+
+  storybook-addon-deep-controls@0.6.2:
+    resolution: {integrity: sha512-U5KnsjGYXc/IA2K0YIVzkaPFmfxLYT9hOTYk22uSOwqbYTz6n1+MZbimHZg77qTPXl9n0j/lf8Hy1nxdxtWMYA==}
+    peerDependencies:
+      '@storybook/addon-controls': 7.x.x || 8.x.x
+      storybook: 7.x.x || 8.x.x
 
   storybook@8.2.6:
     resolution: {integrity: sha512-8j30wDxQmkcqI0fWcSYFsUCjErsY1yTWbTW+yjbwM8DyW18Cud6CwbFRCxjFsH+2M0CjP6Pqs/m1PGI0vcQscQ==}
@@ -9060,6 +9069,11 @@ snapshots:
       escape-string-regexp: 2.0.0
 
   statuses@2.0.1: {}
+
+  storybook-addon-deep-controls@0.6.2(@storybook/addon-controls@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2))))(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2))):
+    dependencies:
+      '@storybook/addon-controls': 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2)))
+      storybook: 8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2))
 
   storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.25.2)):
     dependencies:

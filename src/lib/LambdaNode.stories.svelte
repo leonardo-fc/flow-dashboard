@@ -6,8 +6,13 @@
     title: "Node/LambdaNode",
     component: LambdaNode,
     tags: ["autodocs"],
+    argTypes: {
+      "data.hasError": {
+        control: "boolean",
+      },
+    },
     args: {
-      data: {},
+      "data.hasError": false,
     },
     parameters: {
       layout: "fullscreen",

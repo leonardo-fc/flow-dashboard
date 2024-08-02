@@ -11,6 +11,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    deepControls: { enabled: true },
   },
   decorators: [
     withThemeByClassName({

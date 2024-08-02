@@ -6,8 +6,13 @@
     title: "Node/ApiGatewayNode",
     component: ApiGatewayNode,
     tags: ["autodocs"],
+    argTypes: {
+      "data.hasError": {
+        control: "boolean",
+      },
+    },
     args: {
-      data: {},
+      "data.hasError": false,
     },
     parameters: {
       layout: "fullscreen",
