@@ -17,7 +17,7 @@
 
 <script lang="ts">
   import { Story, Template } from "@storybook/addon-svelte-csf";
-  import StoryFlowLayout from "./StoryFlowLayout.svelte";
+  import StoryFlowLayout from "./stories/StoryFlowLayout.svelte";
 </script>
 
 <Template let:args>

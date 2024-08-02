@@ -9,20 +9,17 @@
     MiniMap,
     type NodeTypes,
     Panel,
+    type Node,
+    type Edge,
   } from "@xyflow/svelte";
-  import { createDiagramStore } from "@/lib/diagramStore";
 
-  import UsersNode from "./UsersNode.svelte";
-  import ApiGatewayNode from "./ApiGatewayNode.svelte";
-  import LambdaNode from "./LambdaNode.svelte";
+  import type { Writable } from "svelte/store";
+  import { onMount } from "svelte";
 
-  const { nodes, edges, reset } = createDiagramStore();
-
-  const nodeTypes = {
-    users: UsersNode,
-    api_gateway: ApiGatewayNode,
-    lambda_function: LambdaNode,
-  } as unknown as NodeTypes;
+  export let nodeTypes: NodeTypes;
+  export let nodes: Writable<Node[]>;
+  export let edges: Writable<Edge[]>;
+  export let reset: (() => void) | undefined = undefined;
 
   const html = document.documentElement;
   let dark = html.classList.contains("dark");
@@ -41,7 +38,7 @@
   });
 </script>
 
-<div class="h-dvh">
+<div class="h-dvh w-full">
   <SvelteFlow
     {nodes}
     {edges}
@@ -56,7 +53,11 @@
     <Controls />
     <Background variant={BackgroundVariant.Dots} />
     <MiniMap />
-    <Panel position="top-right"><button on:click={reset}>Reset</button></Panel>
+    {#if reset}
+      <Panel position="top-right">
+        <button on:click={reset}>Reset</button>
+      </Panel>
+    {/if}
   </SvelteFlow>
 </div>
 

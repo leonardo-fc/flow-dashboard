@@ -1,15 +1,6 @@
 <script lang="ts">
-  import "@xyflow/svelte/dist/style.css";
-  import {
-    Background,
-    BackgroundVariant,
-    Controls,
-    MiniMap,
-    SvelteFlow,
-    type Edge,
-    type Node,
-    type NodeTypes,
-  } from "@xyflow/svelte";
+  import Flow from "../Flow.svelte";
+  import type { Edge, Node, NodeTypes } from "@xyflow/svelte";
   import { writable } from "svelte/store";
   import type { ComponentProps, ComponentType, SvelteComponent } from "svelte";
 
@@ -22,7 +13,7 @@
   export let NodeComponent: ComponentType<T>;
   export let nodeProps: ComponentProps<T>;
 
-  const nodes = writable<Node[]>([
+  const nodes = writable<[Node]>([
     {
       ...nodeProps,
       id: "1",
@@ -30,6 +21,13 @@
       position: { x: 0, y: 0 },
     },
   ]);
+  $: (() => {
+    $nodes[0] = {
+      ...$nodes[0],
+      ...nodeProps,
+    };
+  })();
+
   const edges = writable<Edge[]>([]);
 
   const nodeTypes = {
@@ -37,16 +35,4 @@
   } as unknown as NodeTypes;
 </script>
 
-<div class="h-screen w-full">
-  <SvelteFlow
-    {nodes}
-    {nodeTypes}
-    {edges}
-    fitView
-    proOptions={{ hideAttribution: true }}
-  >
-    <Controls />
-    <Background variant={BackgroundVariant.Dots} />
-    <MiniMap />
-  </SvelteFlow>
-</div>
+<Flow {nodeTypes} {nodes} {edges} />
