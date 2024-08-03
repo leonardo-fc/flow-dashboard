@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "flow-dashboard",
+    "productName": "Flow Dashboard",
     "version": "0.1.0"
   },
   "tauri": {
@@ -59,9 +59,10 @@
       {
         "title": "Flow Dashboard",
         "fullscreen": false,
+        "center": true,
         "resizable": true,
-        "height": 600,
-        "width": 800
+        "height": 700,
+        "width": 1300
       }
     ]
   }
