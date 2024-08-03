@@ -1,10 +1,10 @@
 import { writable } from "svelte/store";
 import type { Node, Edge } from "@xyflow/svelte";
-import AWSApiGatewayIcon from "@/assets/AWS/Arch_Amazon-API-Gateway_64.svg";
-import AWSLambdaIcon from "@/assets/AWS/Arch_AWS-Lambda_64.svg";
-import { storage } from "./storage";
+import { getStorageContext } from "./storage";
 
 export function createDiagramStore() {
+  const storage = getStorageContext();
+
   const defaultNodes: Node[] = [
     {
       id: "1",

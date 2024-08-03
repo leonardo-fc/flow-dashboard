@@ -1,7 +1,7 @@
 import "../src/app.css";
-import type { Preview } from "@storybook/svelte";
-
+import type { Preview, Decorator } from "@storybook/svelte";
 import { withThemeByClassName } from "@storybook/addon-themes";
+import StoriesLayout from "../src/lib/stories/StoriesLayout.svelte";
 
 const preview: Preview = {
   parameters: {
@@ -11,6 +11,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    backgrounds: { disable: true },
     deepControls: { enabled: true },
   },
   decorators: [
@@ -21,7 +22,8 @@ const preview: Preview = {
       },
       defaultTheme: "light",
     }),
-  ],
+    () => StoriesLayout,
+  ] as Decorator[],
 };
 
 export default preview;

@@ -1,27 +1,23 @@
 <script context="module" lang="ts">
   import type { Meta } from "@storybook/svelte";
-  import UsersNode from "./UsersNode.svelte";
+  import Header from "./Header.svelte";
 
   export const meta = {
-    title: "Node/UsersNode",
-    component: UsersNode,
+    title: "Header",
+    component: Header,
     tags: ["autodocs"],
-    args: {
-      data: {},
-    },
     parameters: {
       layout: "fullscreen",
     },
-  } satisfies Meta<UsersNode>;
+  } satisfies Meta<Header>;
 </script>
 
 <script lang="ts">
   import { Story, Template } from "@storybook/addon-svelte-csf";
-  import StoryFlowLayout from "./stories/StoryFlowLayout.svelte";
 </script>
 
 <Template let:args>
-  <StoryFlowLayout NodeComponent={UsersNode} nodeProps={args} />
+  <Header {...args} />
 </Template>
 
 <Story name="Default" />

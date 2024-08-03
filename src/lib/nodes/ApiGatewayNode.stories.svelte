@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
   import type { Meta } from "@storybook/svelte";
-  import LambdaNode from "./LambdaNode.svelte";
+  import ApiGatewayNode from "./ApiGatewayNode.svelte";
 
   export const meta = {
-    title: "Node/LambdaNode",
-    component: LambdaNode,
+    title: "Node/ApiGatewayNode",
+    component: ApiGatewayNode,
     tags: ["autodocs"],
     argTypes: {
       "data.hasError": {
@@ -17,16 +17,16 @@
     parameters: {
       layout: "fullscreen",
     },
-  } satisfies Meta<LambdaNode>;
+  } satisfies Meta<ApiGatewayNode>;
 </script>
 
 <script lang="ts">
   import { Story, Template } from "@storybook/addon-svelte-csf";
-  import StoryFlowLayout from "./stories/StoryFlowLayout.svelte";
+  import StoryFlowLayout from "@/lib/stories/StoryFlowLayout.svelte";
 </script>
 
 <Template let:args>
-  <StoryFlowLayout NodeComponent={LambdaNode} nodeProps={args} />
+  <StoryFlowLayout NodeComponent={ApiGatewayNode} nodeProps={args} />
 </Template>
 
 <Story name="Default" />

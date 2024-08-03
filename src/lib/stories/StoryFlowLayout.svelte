@@ -35,4 +35,6 @@
   } as unknown as NodeTypes;
 </script>
 
-<Flow {nodeTypes} {nodes} {edges} />
+<div class="h-dvh">
+  <Flow {nodeTypes} {nodes} {edges} />
+</div>

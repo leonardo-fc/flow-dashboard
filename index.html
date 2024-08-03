@@ -6,17 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flow Dashboard</title>
     <script>
-      function changeTheme(matches) {
-        if (matches) {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      }
-
       const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      changeTheme(mediaQuery.matches);
-      mediaQuery.onchange = ({ matches }) => changeTheme(matches);
+      if (mediaQuery.matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
     </script>
   </head>
   <body>
