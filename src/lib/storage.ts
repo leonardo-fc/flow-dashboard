@@ -9,66 +9,69 @@ const key = {
   edges: prefix + "edges",
 } as const;
 
-export const storage = {
-  getTheme() {
-    return localStorage.getItem(key.theme);
-  },
-  setTheme(value: "light" | "dark" | null) {
-    if (value === null) {
-      localStorage.removeItem(key.theme);
-    } else {
-      localStorage.setItem(key.theme, value);
-    }
-  },
+type Storage = ReturnType<typeof createStorage>;
+export function createStorage(localStorage: globalThis.Storage) {
+  function getJSONItem(key: string) {
+    const raw = localStorage.getItem(key);
+    if (!raw) return;
 
-  getNodes() {
-    return getJSONItem(key.nodes);
-  },
-  setNodes(value: unknown) {
-    setJSONItem(key.nodes, value);
-  },
+    return JSON.parse(raw);
+  }
 
-  getEdges() {
-    return getJSONItem(key.edges);
-  },
-  setEdges(value: unknown) {
-    setJSONItem(key.edges, value);
-  },
-};
+  function setJSONItem(key: string, value: unknown) {
+    localStorage.setItem(key, JSON.stringify(value));
+  }
 
-function getJSONItem(key: string) {
-  const raw = localStorage.getItem(key);
-  if (!raw) return;
+  return {
+    getTheme() {
+      return localStorage.getItem(key.theme);
+    },
+    setTheme(value: "light" | "dark" | null) {
+      if (value === null) {
+        localStorage.removeItem(key.theme);
+      } else {
+        localStorage.setItem(key.theme, value);
+      }
+    },
 
-  return JSON.parse(raw);
-}
+    getNodes() {
+      return getJSONItem(key.nodes);
+    },
+    setNodes(value: unknown) {
+      setJSONItem(key.nodes, value);
+    },
 
-function setJSONItem(key: string, value: unknown) {
-  localStorage.setItem(key, JSON.stringify(value));
+    getEdges() {
+      return getJSONItem(key.edges);
+    },
+    setEdges(value: unknown) {
+      setJSONItem(key.edges, value);
+    },
+  };
 }
 
 // Context
 
 export function setStorageContext() {
-  setContext(contextKey.storage, storage);
+  setContext<Storage>(contextKey.storage, createStorage(localStorage));
 }
 
-const noop = () => null;
 export function setNoopStorageContext() {
-  const noopStorage = new Proxy(
-    {},
-    {
-      get() {
-        return noop;
-      },
-    }
-  );
-  setContext(contextKey.storage, noopStorage);
+  const noopLocalStorage: globalThis.Storage = {
+    length: 0,
+    getItem: () => null,
+    setItem: () => undefined,
+    clear: () => undefined,
+    removeItem: () => undefined,
+    key: () => null,
+  };
+
+  setContext<Storage>(contextKey.storage, createStorage(noopLocalStorage));
 }
 
 export function getStorageContext() {
   if (!hasContext(contextKey.storage))
     throw new Error(`Missing ${contextKey.storage} context`);
 
-  return getContext<typeof storage>(contextKey.storage);
+  return getContext<Storage>(contextKey.storage);
 }
