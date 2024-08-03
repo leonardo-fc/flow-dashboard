@@ -3,7 +3,7 @@
   import Tooltip from "./Tooltip.svelte";
 
   export const meta = {
-    title: "Tooltip",
+    title: "common/Tooltip",
     component: Tooltip,
     tags: ["autodocs"],
     args: {

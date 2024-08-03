@@ -1,15 +1,14 @@
 <script context="module" lang="ts">
   import type { Meta } from "@storybook/svelte";
-  import Header from "./Header.svelte";
+  import App from "./App.svelte";
 
   export const meta = {
-    title: "common/Header",
-    component: Header,
-    tags: ["autodocs"],
+    title: "App",
+    component: App,
     parameters: {
       layout: "fullscreen",
     },
-  } satisfies Meta<Header>;
+  } satisfies Meta<App>;
 </script>
 
 <script lang="ts">
@@ -17,7 +16,7 @@
 </script>
 
 <Template let:args>
-  <Header {...args} />
+  <App {...args} />
 </Template>
 
 <Story name="Default" />

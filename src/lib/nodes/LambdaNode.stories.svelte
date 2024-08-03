@@ -3,7 +3,7 @@
   import LambdaNode from "./LambdaNode.svelte";
 
   export const meta = {
-    title: "Node/LambdaNode",
+    title: "nodes/LambdaNode",
     component: LambdaNode,
     tags: ["autodocs"],
     argTypes: {

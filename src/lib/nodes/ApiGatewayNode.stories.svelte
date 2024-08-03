@@ -3,7 +3,7 @@
   import ApiGatewayNode from "./ApiGatewayNode.svelte";
 
   export const meta = {
-    title: "Node/ApiGatewayNode",
+    title: "nodes/ApiGatewayNode",
     component: ApiGatewayNode,
     tags: ["autodocs"],
     argTypes: {

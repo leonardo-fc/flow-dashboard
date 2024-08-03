@@ -3,7 +3,7 @@
   import UsersNode from "./UsersNode.svelte";
 
   export const meta = {
-    title: "Node/UsersNode",
+    title: "nodes/UsersNode",
     component: UsersNode,
     tags: ["autodocs"],
     args: {
