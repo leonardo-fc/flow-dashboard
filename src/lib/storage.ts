@@ -1,5 +1,6 @@
 import { getContext, hasContext, setContext } from "svelte";
 import { contextKey } from "./contextKeys";
+import type { Node, Edge } from "@xyflow/svelte";
 
 const prefix = "app/";
 
@@ -11,11 +12,11 @@ const key = {
 
 type Storage = ReturnType<typeof createStorage>;
 export function createStorage(localStorage: globalThis.Storage) {
-  function getJSONItem(key: string) {
+  function getJSONItem<T>(key: string) {
     const raw = localStorage.getItem(key);
     if (!raw) return;
 
-    return JSON.parse(raw);
+    return JSON.parse(raw) as T;
   }
 
   function setJSONItem(key: string, value: unknown) {
@@ -35,14 +36,14 @@ export function createStorage(localStorage: globalThis.Storage) {
     },
 
     getNodes() {
-      return getJSONItem(key.nodes);
+      return getJSONItem<Node[]>(key.nodes);
     },
     setNodes(value: unknown) {
       setJSONItem(key.nodes, value);
     },
 
     getEdges() {
-      return getJSONItem(key.edges);
+      return getJSONItem<Edge[]>(key.edges);
     },
     setEdges(value: unknown) {
       setJSONItem(key.edges, value);
