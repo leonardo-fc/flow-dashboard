@@ -5,7 +5,6 @@
   export const meta = {
     title: "nodes/UsersNode",
     component: UsersNode,
-    tags: ["autodocs"],
     args: {
       data: {},
     },

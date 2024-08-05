@@ -5,7 +5,6 @@
   export const meta = {
     title: "common/Header",
     component: Header,
-    tags: ["autodocs"],
     parameters: {
       layout: "fullscreen",
     },

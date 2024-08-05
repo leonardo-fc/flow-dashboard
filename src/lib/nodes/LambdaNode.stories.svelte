@@ -5,7 +5,6 @@
   export const meta = {
     title: "nodes/LambdaNode",
     component: LambdaNode,
-    tags: ["autodocs"],
     argTypes: {
       "data.hasError": {
         control: "boolean",

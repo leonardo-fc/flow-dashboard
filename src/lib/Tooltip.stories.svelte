@@ -5,7 +5,6 @@
   export const meta = {
     title: "common/Tooltip",
     component: Tooltip,
-    tags: ["autodocs"],
     args: {
       tip: "Tip message",
     },

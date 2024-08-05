@@ -5,7 +5,6 @@
   export const meta = {
     title: "nodes/ApiGatewayNode",
     component: ApiGatewayNode,
-    tags: ["autodocs"],
     argTypes: {
       "data.hasError": {
         control: "boolean",
