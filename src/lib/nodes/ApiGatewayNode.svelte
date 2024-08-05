@@ -14,10 +14,10 @@
   <Handle type="source" id="api_gateway" position={Position.Right} />
 
   <div
-    class="absolute size-2 rounded-full top-0 m-1 border-black border-[1px] {hasError
+    class="absolute top-0 m-1 size-2 rounded-full border-[1px] border-black {hasError
       ? 'bg-error'
       : 'bg-success'}"
   />
 
-  <div class="absolute text-center -ml-4 w-24 text-sm">API Gateway</div>
+  <div class="absolute -ml-4 w-24 text-center text-sm">API Gateway</div>
 </div>

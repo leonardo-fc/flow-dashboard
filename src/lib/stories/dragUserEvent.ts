@@ -4,7 +4,7 @@ import { sleep } from "../sleep";
 
 export const { drag } = instrument(
   { drag: _drag },
-  { intercept: true, retain: false }
+  { intercept: true, retain: false },
 );
 
 async function _drag(
@@ -26,7 +26,7 @@ async function _drag(
   ) & {
     steps?: number;
     duration?: number;
-  }
+  },
 ) {
   await sleep(0); // ensure Flow rendered
   const from = getElementClientCenter(element);

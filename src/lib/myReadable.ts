@@ -6,7 +6,7 @@ export interface MyReadable<T> extends Readable<T> {
 
 export function myReadable<T>(
   get: () => T,
-  start?: StartStopNotifier<T> | undefined
+  start?: StartStopNotifier<T> | undefined,
 ): MyReadable<T> {
   const store = readable(get(), start);
 

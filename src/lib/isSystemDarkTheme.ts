@@ -22,7 +22,7 @@ export function setSystemDarkThemeContext() {
 
   setContext<DarkReadable>(
     contextKey.systemDarkTheme,
-    Object.assign(mediaQueryDark, { get })
+    Object.assign(mediaQueryDark, { get }),
   );
 }
 

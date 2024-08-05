@@ -13,10 +13,10 @@
   <img class="size-16 rounded-md" src={AWSIcon} alt="" />
 
   <div
-    class="absolute size-2 rounded-full top-0 m-1 border-black border-[1px] {hasError
+    class="absolute top-0 m-1 size-2 rounded-full border-[1px] border-black {hasError
       ? 'bg-error'
       : 'bg-success'}"
   />
 
-  <div class="absolute text-center -ml-4 w-24 text-sm">Lambda Function</div>
+  <div class="absolute -ml-4 w-24 text-center text-sm">Lambda Function</div>
 </div>

@@ -23,5 +23,5 @@
   </svg>
   <Handle type="source" id="users" position={Position.Right} />
 
-  <div class="absolute text-center -ml-4 w-24 text-sm">Internet Users</div>
+  <div class="absolute -ml-4 w-24 text-center text-sm">Internet Users</div>
 </div>

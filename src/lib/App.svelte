@@ -16,7 +16,7 @@
   } as unknown as NodeTypes;
 </script>
 
-<div class="h-dvh flex flex-col">
+<div class="flex h-dvh flex-col">
   <Header />
 
   <main class="flex-1">
