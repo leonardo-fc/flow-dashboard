@@ -33,6 +33,8 @@
     "autoprefixer": "^10.4.19",
     "playwright": "^1.45.3",
     "postcss": "^8.4.39",
+    "prettier-plugin-svelte": "^3.2.6",
+    "prettier-plugin-tailwindcss": "^0.6.5",
     "storybook": "^8.2.7",
     "storybook-addon-deep-controls": "^0.6.2",
     "svelte": "^4.2.18",
