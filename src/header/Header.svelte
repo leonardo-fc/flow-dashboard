@@ -1,7 +1,7 @@
 <script lang="ts">
+  import AddServiceMenu from "./AddServiceMenu.svelte";
   import ThemeToggle from "./ThemeToggle.svelte";
-  import AddServiceMenu from "./header/AddServiceMenu.svelte";
-  import UserMenu from "./header/UserMenu.svelte";
+  import UserMenu from "./UserMenu.svelte";
 </script>
 
 <header

@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 import type { Node, Edge } from "@xyflow/svelte";
-import { getStorageContext } from "./storage";
+import { getStorageContext } from "@/lib/storage";
 
 const defaultNodes = (): Node[] => [
   {

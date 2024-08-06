@@ -1,11 +1,11 @@
 <script lang="ts">
-  import Flow from "./Flow.svelte";
-  import { createDiagramStore } from "./diagramStore";
-  import UsersNode from "./nodes/UsersNode.svelte";
-  import ApiGatewayNode from "./nodes/ApiGatewayNode.svelte";
-  import LambdaNode from "./nodes/LambdaNode.svelte";
   import type { NodeTypes } from "@xyflow/svelte";
-  import Header from "./Header.svelte";
+  import { createDiagramStore } from "./diagramStore";
+  import Header from "@/header/Header.svelte";
+  import Flow from "./Flow.svelte";
+  import UsersNode from "@/nodes/UsersNode.svelte";
+  import ApiGatewayNode from "@/nodes/ApiGatewayNode.svelte";
+  import LambdaNode from "@/nodes/LambdaNode.svelte";
 
   const { nodes, edges, reset } = createDiagramStore();
 

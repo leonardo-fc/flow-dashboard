@@ -15,8 +15,8 @@
   } from "@xyflow/svelte";
   import { createId } from "@paralleldrive/cuid2";
   import type { Writable } from "svelte/store";
-  import { darkTheme } from "./isDarkTheme";
-  import { serdeNodeDrag } from "./serdeNodeDrag";
+  import { darkTheme } from "@/lib/isDarkTheme";
+  import { serdeNodeDrag } from "@/lib/serdeNodeDrag";
 
   export let nodeTypes: NodeTypes;
   export let nodes: Writable<Node[]>;

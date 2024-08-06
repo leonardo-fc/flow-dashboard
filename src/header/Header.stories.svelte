@@ -3,7 +3,7 @@
   import Header from "./Header.svelte";
 
   export const meta = {
-    title: "common/Header",
+    title: "header/Header",
     component: Header,
     parameters: {
       layout: "fullscreen",

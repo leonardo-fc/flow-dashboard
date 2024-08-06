@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { getSystemThemeContext } from "./isSystemDarkTheme";
-  import { getStorageContext } from "./storage";
+  import { getSystemThemeContext } from "@/lib/isSystemDarkTheme";
+  import { getStorageContext } from "@/lib/storage";
 
   const systemDark = getSystemThemeContext();
   const storage = getStorageContext();

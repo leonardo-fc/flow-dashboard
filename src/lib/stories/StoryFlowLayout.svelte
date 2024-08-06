@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Flow from "../Flow.svelte";
+  import Flow from "@/core/Flow.svelte";
   import type { Edge, Node, NodeTypes } from "@xyflow/svelte";
   import { writable } from "svelte/store";
   import type { ComponentProps, ComponentType, SvelteComponent } from "svelte";

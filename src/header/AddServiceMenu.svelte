@@ -3,7 +3,7 @@
   import { cubicOut } from "svelte/easing";
   import ApiGatewayIcon from "@/assets/AWS/Arch_Amazon-API-Gateway_64.svg";
   import Lambda from "@/assets/AWS/Arch_AWS-Lambda_64.svg";
-  import { serdeNodeDrag } from "../serdeNodeDrag";
+  import { serdeNodeDrag } from "@/lib/serdeNodeDrag";
   import { computePosition, shift } from "@floating-ui/dom";
 
   export let opened = false;

@@ -1,9 +1,9 @@
 <script context="module" lang="ts">
-  import type { Meta, StoryObj } from "@storybook/svelte";
+  import type { Meta } from "@storybook/svelte";
   import App from "./App.svelte";
   import { within, userEvent, expect } from "@storybook/test";
-  import { mouseDrag, dragAndDrop } from "./stories/dragUserEvent";
-  import { sleep } from "./sleep";
+  import { mouseDrag, dragAndDrop } from "@/lib/stories/dragUserEvent";
+  import { sleep } from "@/lib/sleep";
 
   export const meta = {
     title: "App",
