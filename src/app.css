@@ -36,4 +36,7 @@
   .divider-x {
     @apply h-0.5 w-full bg-[#eeeeee] dark:bg-[#5b5b5b];
   }
+  .details-bottom {
+    @apply absolute left-auto right-1/2 translate-x-1/2;
+  }
 }

@@ -19,5 +19,5 @@
       : 'bg-success'}"
   />
 
-  <div class="absolute -ml-4 w-24 text-center text-sm">API Gateway</div>
+  <div class="details-bottom w-24 text-center text-sm">API Gateway</div>
 </div>

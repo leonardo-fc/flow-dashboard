@@ -18,5 +18,5 @@
       : 'bg-success'}"
   />
 
-  <div class="absolute -ml-4 w-24 text-center text-sm">Lambda Function</div>
+  <div class="details-bottom w-24 text-center text-sm">Lambda Function</div>
 </div>
