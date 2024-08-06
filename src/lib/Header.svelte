@@ -1,7 +1,7 @@
 <script lang="ts">
   import ThemeToggle from "./ThemeToggle.svelte";
-  import Tooltip from "./Tooltip.svelte";
   import AddServiceMenu from "./header/AddServiceMenu.svelte";
+  import UserMenu from "./header/UserMenu.svelte";
 </script>
 
 <header
@@ -16,12 +16,6 @@
   <div class="flex items-center gap-6">
     <ThemeToggle />
 
-    <Tooltip tip="Guest">
-      <div
-        class="flex size-8 select-none items-center justify-center rounded-full bg-blue-500 font-bold text-white"
-      >
-        G
-      </div>
-    </Tooltip>
+    <UserMenu />
   </div>
 </header>
