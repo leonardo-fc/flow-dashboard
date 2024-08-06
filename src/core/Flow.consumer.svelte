@@ -91,4 +91,8 @@
   :global(.svelte-flow .svelte-flow__handle.valid) {
     @apply bg-success;
   }
+
+  :global(.svelte-flow .svelte-flow__node.selected) {
+    @apply rounded-md outline outline-1 outline-black dark:outline-white;
+  }
 </style>
