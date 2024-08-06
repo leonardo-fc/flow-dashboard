@@ -2,7 +2,11 @@
 
 ![screenshot of the app](/docs/screenshot.png)
 
-## Run
+## View live
+
+<https://leonardo-fc.github.io/flow-dashboard/>
+
+## Run locally
 
 Don't forget to install packages first
 
