@@ -2,7 +2,15 @@
 
 ![screenshot of the app](/docs/screenshot.png)
 
-## Run app
+## Run
+
+Don't forget to install packages first
+
+```sh
+pnpm install
+```
+
+Run app
 
 ```sh
 # run as Desktop app
@@ -11,7 +19,7 @@ pnpm tauri:dev
 pnpm dev
 ```
 
-## Run storybook
+Run storybook
 
 ```sh
 pnpm storybook
