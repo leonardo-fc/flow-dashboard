@@ -6,6 +6,8 @@
     "icns",
     "instrumenter",
     "nsis",
+    "onbeforedelete",
+    "paralleldrive",
     "Serde",
     "svelteflow",
     "tailwindcss",

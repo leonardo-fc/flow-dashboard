@@ -58,6 +58,18 @@
     $nodes.push(newNode);
     $nodes = $nodes;
   };
+
+  // don't delete `users` node
+  const onBeforeDelete = async (p: { nodes: Node[]; edges: Edge[] }) => {
+    const nodes = p.nodes.filter((node) => node.type !== "users");
+    const hasNodeOfId = (id: string) => nodes.some((node) => node.id === id);
+
+    const edges = p.edges.filter(
+      (edge) => hasNodeOfId(edge.source) || hasNodeOfId(edge.target),
+    );
+
+    return { nodes, edges };
+  };
 </script>
 
 <SvelteFlow
@@ -72,6 +84,7 @@
   }}
   on:dragover={onDragOver}
   on:drop={onDrop}
+  onbeforedelete={onBeforeDelete}
 >
   <Controls />
   <Background variant={BackgroundVariant.Dots} />
