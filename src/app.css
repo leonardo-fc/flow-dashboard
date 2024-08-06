@@ -2,24 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+@layer base {
+  :root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  color-scheme: light dark;
+    color-scheme: light dark;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-black dark:bg-black dark:text-white;
+  }
+
+  body {
+    --bg: #fefefe;
+  }
+  .dark body {
+    --bg: #2b2b2b;
+  }
 }
 
-body {
-  @apply bg-white text-black dark:bg-black dark:text-white;
-}
-
-body {
-  --bg: #fefefe;
-}
-.dark body {
-  --bg: #2b2b2b;
+@layer components {
+  .card {
+    @apply border-[1px] border-[#eeeeee] bg-[#fefefe] dark:border-[#5b5b5b] dark:bg-[#2b2b2b];
+  }
+  .divider-y {
+    @apply h-full w-0.5 bg-[#eeeeee] dark:bg-[#5b5b5b];
+  }
+  .divider-x {
+    @apply h-0.5 w-full bg-[#eeeeee] dark:bg-[#5b5b5b];
+  }
 }

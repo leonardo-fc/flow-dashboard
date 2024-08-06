@@ -6,6 +6,8 @@
     "icns",
     "instrumenter",
     "nsis",
+    "Serde",
+    "svelteflow",
     "tailwindcss",
     "tauri",
     "xyflow"

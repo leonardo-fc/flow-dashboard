@@ -2,13 +2,13 @@ import { fireEvent } from "@testing-library/dom";
 import { instrument } from "@storybook/instrumenter";
 import { sleep } from "../sleep";
 
-export const { drag } = instrument(
-  { drag: _drag },
+export const { mouseDrag } = instrument(
+  { mouseDrag: _mouseDrag },
   { intercept: true, retain: false },
 );
 
-async function _drag(
-  element: HTMLElement,
+async function _mouseDrag(
+  element: Element,
   {
     to: inTo,
     delta,
@@ -60,7 +60,52 @@ async function _drag(
     fireEvent.mouseMove(element, current);
   }
   fireEvent.mouseUp(element, current);
-  console.log(current.clientY, from.y);
+}
+
+export const { dragAndDrop } = instrument(
+  { dragAndDrop: _dragAndDrop },
+  { intercept: true, retain: false },
+);
+
+async function _dragAndDrop(
+  element: Element,
+  {
+    to: inTo,
+    delta,
+  }:
+    | {
+        to: { x: number; y: number } | Element;
+        delta?: undefined;
+      }
+    | {
+        to?: undefined;
+        delta: { x: number; y: number };
+      },
+) {
+  await sleep(0); // ensure Flow rendered
+  const from = getElementClientCenter(element);
+
+  const to = delta
+    ? {
+        x: from.x + delta.x,
+        y: from.y + delta.y,
+      }
+    : getCoords(inTo);
+
+  const current: DragEventInit = {
+    clientX: from.x,
+    clientY: from.y,
+    dataTransfer: new DataTransfer(),
+  };
+
+  fireEvent(element, new DragEvent("dragstart", current));
+
+  current.clientX = to.x;
+  current.clientY = to.y;
+  current.bubbles = true;
+
+  const toElement = document.elementFromPoint(to.x, to.y)!;
+  fireEvent(toElement, new DragEvent("drop", current));
 }
 
 // https://stackoverflow.com/a/53946549/1179377
