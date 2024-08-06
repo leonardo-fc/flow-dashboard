@@ -12,7 +12,10 @@
 </script>
 
 <script lang="ts">
-  import { Story, Template } from "@storybook/addon-svelte-csf";
+  import * as CSF from "@storybook/addon-svelte-csf";
+
+  const Template = CSF.Template<Header>;
+  const Story = CSF.Story<Header>;
 </script>
 
 <Template let:args>

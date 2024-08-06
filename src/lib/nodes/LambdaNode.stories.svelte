@@ -20,8 +20,11 @@
 </script>
 
 <script lang="ts">
-  import { Story, Template } from "@storybook/addon-svelte-csf";
+  import * as CSF from "@storybook/addon-svelte-csf";
   import StoryFlowLayout from "@/lib/stories/StoryFlowLayout.svelte";
+
+  const Template = CSF.Template<LambdaNode>;
+  const Story = CSF.Story<LambdaNode>;
 </script>
 
 <Template let:args>

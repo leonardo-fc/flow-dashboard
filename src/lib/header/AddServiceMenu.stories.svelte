@@ -17,7 +17,10 @@
 </script>
 
 <script lang="ts">
-  import { Story, Template } from "@storybook/addon-svelte-csf";
+  import * as CSF from "@storybook/addon-svelte-csf";
+
+  const Template = CSF.Template<AddServiceMenu>;
+  const Story = CSF.Story<AddServiceMenu>;
 </script>
 
 <Template let:args>

@@ -59,14 +59,14 @@
 </script>
 
 <script lang="ts">
-  import { Story, Template } from "@storybook/addon-svelte-csf";
+  import * as CSF from "@storybook/addon-svelte-csf";
 
-  const MyTemplate = Template<App>;
-  const MyStory = Story<App>;
+  const Template = CSF.Template<App>;
+  const Story = CSF.Story<App>;
 </script>
 
-<MyTemplate let:args>
+<Template let:args>
   <App {...args} />
-</MyTemplate>
+</Template>
 
-<MyStory name="Default" {play} />
+<Story name="Default" {play} />
